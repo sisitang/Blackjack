@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Blackjack game using JQuery and CSS3</title>
+<meta name="description" content="A blackjack game witten by Sisi Tang using JQuery">
+<meta name="keywords" content="Blackjack online game,front-end web developer, website developer, interactive web design,JQuery,HTML,HTML5,CSS,CSS3,XML,JavaScript,Photoshop,Illustrator, User experience design">
+<meta name="author" content="Sisi Tang">
+<link rel="stylesheet" type="text/css" href="styles/main.css"/>
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Luckiest+Guy' rel='stylesheet' type='text/css'>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53196306-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+<div class="cover up"><span></span></div>
+<div class="cover down"></div>
+<div class="wrapper">
+    	
+        <div class="bg_table">
+        	<img src="images/back.png">
+            <div class="garfield" ><img src="images/garfield.png"></div>
+            
+			<div id="score">
+				<ul>
+					<li id="money">MONEY: <br>$<span>1000</span></li>
+					<li id="bet">BET: <br>$<span>0</span></li>
+				</ul>
+			</div>
+			<div id="suffle"><img id="legs" class="dance" src="images/legs.png"></div>
+			<div id="resultMessage"></div>
+			<div class="curValue player"></div>
+			<div class="curValue dealer"></div>
+
+			<div id="rules">
+            	Rules:
+                <p style="font-size:20px;">A two-player game<br>For A Beginner<br>Easy to follow</p>
+            </div>
+			
+
+			<div id="chips">
+				
+                <ul>
+					<li ><img src="images/chips/c5.png"  alt="5chip" class="chip c5"/></li>
+					<li ><img src="images/chips/c10.png"  alt="10chip" class="chip c10"/></li>
+					<li ><img src="images/chips/c50.png"  alt="50chip" class="chip c50"/></li>
+					<li ><img src="images/chips/c100.png" alt="100chip" class="chip c100"/></li>
+          		</ul>
+			</div>          
+            <div id="gameField"></div>
+			<div id="control">
+				<div id="hit">HIT</div>
+				<div id="deal">DEAL</div>
+				<div id="stay">STAND</div>
+			</div>       
+            <div class="dealer"><img src="images/dealer.png"></div>
+            <div class="newGame"><img src="images/newgame.png"></div>
+            <div class="showDealer_container">
+  				  <div class="shadow flip_card">
+       			     <img id="face" class="front face" src=""/>
+      				 <img id="back" class="back face" src="" />
+   				  </div>
+			</div>
+            <div class="animation_img"><img src="images/ball.png" width="50px"></div>
+       </div>
+</div>
+<footer>
+ <div class="links">
+ <article>
+    <h3>Info</h3>
+    <a href="http://stang.htpwebdesign.ca">Portfolio Homepage</a>
+    <a href="http://stang.htpwebdesign.ca#jquery">JQuery Projects</a>
+    <a href="http://stang.htpwebdesign.ca#php">PHP/HTML5/CSS3 Projects</a>
+    <a href="http://stang.htpwebdesign.ca#wordpress">WordPress Projects</a>
+ </article>
+ <article>
+    <h3>About</h3>
+    <a href="http://twd.htpwebdesign.ca/">BCIT - Technical Web Designer</a>
+    <a href="http://twd.htpwebdesign.ca/students.html">Peers</a>
+ </article>
+ <article>
+    <h3>Support</h3>
+    <a href="https://www.linkedin.com/pub/sisi-tang/80/666/9b1">Contact Me</a>
+    <a href="">FAQs</a>
+ </article>
+ <p>&copy; 2015 Sisi Tang &nbsp;&nbsp;
+ <a href="https://twitter.com/share" class="twitter-share-button" data-via="sisideveloper">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+ </p>
+ </div>     
+</footer>
+
+<script src="scripts/blackjack.js" ></script>
+</body>
+
+</html>

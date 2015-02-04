@@ -1,0 +1,466 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* CSS Reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* End CSS Reset */
+/*body*/
+
+
+body{
+	background-image:url(../images/bg.jpg);
+	
+}
+.cover{
+	position:fixed;
+	left:0;
+
+	width:100%;
+	height:50%;
+	opacity:0.9;
+	background-repeat:no-repeat;
+	border-bottom-style:inset;
+	border-top-style:inset;
+
+}
+.up{
+	top:0;
+	background-color:#9159E3;
+	z-index:999;
+	background-image:url(../images/up.png);
+	background-position:bottom;
+	border-bottom:20px solid #FF5014;
+
+}
+.down{
+	bottom:0;
+	background-color:#6836B1;
+	z-index:9999;
+	background-image:url(../images/down.png);
+	background-position:top;
+	border-top:20px solid #FFE714;
+}
+
+.cover span{
+	position:absolute;
+	text-align:center;
+	width:100%;
+	margin:auto;
+	font-size:80px;
+	color:#FF5014;
+	font-family: 'Luckiest Guy', cursive;
+}
+/*End of body*/
+/* Wrapper*/
+
+.wrapper{
+	
+	margin:0 auto;
+	width:960px;
+	min-height:700px;
+	position:relative;
+
+}
+
+/*End of wrapper*/
+
+/*_____area for showing dealer's hidden card______*/
+.showDealer_container {
+    position:absolute;
+	top:180px;
+	left:430px;
+	-webkit-perspective: 1000;
+    perspective: 1000;
+	width: 80px;
+    height: 116px;
+}
+.flip_card {
+    -webkit-perspective: 1000;
+    perspective: 1000;    
+	width: 80px;
+    height:116px;
+	-webkit-transform-style: preserve-3d;
+    -webkit-transition: all 1.0s linear;
+    transform-style: preserve-3d;
+    transition: all 1.0s linear;
+}
+.showDealer_container.active .flip_card {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+	
+}
+.face.back {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    background-color: #aaa;
+}
+
+.showDealer_container img{
+		display:none;
+}
+
+/*____end of area_________________________________*/
+
+.garfield{
+	position:absolute;
+	width:auto;
+	height:auto;
+	top:0;
+	left:-80px;
+	opacity:0.7;
+	cursor:pointer;
+	z-index:3;
+
+}
+.garfield:hover{
+	opacity:1;
+}
+.bg_table{
+
+	position:absolute;
+	top:0;
+	left:0;
+}
+.dealer{
+	position:absolute;
+	top:40px;
+	right:340px;
+	cursor:pointer;
+}
+.newGame{
+	position:absolute;
+	top:10px;
+	right:-70px;
+	width:60px;
+	cursor:pointer;
+	opacity:0.5;
+	display:none;
+	/*
+	-moz-box-shadow:10px 10px 10px #fff;
+	-webkit-box-shadow:10px 10px 10px #fff;
+	*/
+}
+.animation_img{
+	position:absolute;
+	top:140px;
+	left:-70px;
+	width:auto;
+	height:auto;
+	cursor:pointer;
+	display:none;
+	z-index:5;
+}
+.dance{
+	display:none;
+}
+
+
+/*________Message_______________*/
+	#rules{
+		font-family:"Comic Sans MS", cursive;
+		position:absolute;
+		top:190px;
+		left:-70px;
+		width:200px;
+		height:200px;
+		border: 10px solid #FF5014;
+		border-radius:20px;
+		background-color:#FFE714;
+		opacity:0.8;
+		font-size:30px;
+		line-height:1.5;
+		display:none;
+		color:#6B23D6;
+	}	
+	
+	#players{
+		position:absolute;
+		width:100%;
+		height:83%;
+	}
+	
+	#resultMessage{
+		position:absolute;
+		left:220px;
+		top:430px;
+		width:150px;
+		height:auto;
+		text-wrap:none;
+		padding:3px;
+		background:#a95a0c;
+		border:3px dotted #666;
+		text-align:center;
+		padding:5px 0;
+		font-size:22px;
+		font-family: Papyrus, fantasy;
+		color:#fff;
+		z-index:888;
+		display:none;
+		font-weight:bold;
+	}
+	
+
+/*___End of Message______________*/
+
+
+/*_______Chips_____________*/
+
+
+#chips{
+	position:absolute;
+	width:auto;
+	height:auto;
+	left:30px;
+	bottom:65px;
+	z-index:99;
+	/*border:1px solid #fff;*/
+	
+}
+
+	#chips li {
+		position:relative;
+		float:left;
+		width:70px;
+		height:70px;
+		margin-left:5px;
+		
+		/*border:1px solid #fff;*/
+		
+	}
+		#chips  img{cursor:pointer; position:absolute; width:70px; height:70px;}
+		#chips img.c5{margin-top:-10px}
+		#chips img.c10{margin-top:15px}
+		#chips img.c50{margin-top:38px}
+		#chips img.c100{margin-top:50px}
+
+
+/*_______End of chips_____________*/
+
+/*_______GameField_____________*/
+
+#gameField{
+	    position:absolute;
+		top:30px;
+		left:0px;
+		width:940px;
+		height:600px;
+		background:url("../images/bet.png");
+		background-position:bottom;
+		background-repeat:no-repeat;
+		
+	}
+
+	
+		#gameField .cardM{
+			position:absolute; 
+			top:0px; 
+			right:100px; 
+			display:none;
+			z-index:200;
+			
+		}
+		
+		.curValue{
+			position:absolute;
+			left:300px;
+			top:50px;
+			font-size:30px;
+			color:#fff;
+			z-index:4;
+			font-family: Papyrus, fantasy;
+			font-weight:bolder;
+			
+		}
+		
+		.curValue.player{top:400px}
+/*_______End of gameField_____________*/
+
+#suffle{
+	    position:absolute;
+		top:0px;
+		right:0px;
+		width:165px;
+		height:181px;
+		background:url("../images/suffle.png");
+		background-repeat:no-repeat;
+		cursor:pointer;
+	
+		z-index:10;
+	}
+#score{
+        position:absolute;
+		top:30px;
+		left:30px;
+		width:223px;
+		height:319px;
+		background:url("../images/scroll_paper.png");
+		background-repeat:no-repeat;
+		padding-top:30px;
+	}
+		#score li{
+			margin:13px 15px;
+			padding:30px 40px;
+			font-family: Papyrus, fantasy;
+			font-size:25px;
+			font-weight:bold;
+			color:#fff;
+			
+		}
+			
+#control{
+		position:absolute;
+		width:350px;
+		height:50px;
+		left:30%;
+		bottom:40px
+	}
+	
+		#control div{
+			float:left;
+			width:80px;
+			height:90px;
+			margin:10px 0 0 135px;
+			padding-top:3px;
+			text-align:center;
+			line-height:90px;
+			font-size:22px;
+			background:url("../images/claw.png") no-repeat;
+			display:none;
+			cursor:pointer;
+			font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+			color:#666;
+			
+		}
+			#control div:hover{color:white}
+		    #control #hit, #control #stay{margin-left:75px}	
+
+/*Footer
+******************************************/
+footer{
+	
+	height:280px;
+	width:100%;
+	z-index:99999;
+	text-align:center;
+	margin-top:10px;
+	background:#034223;
+	color:white;
+	margin-top:100px;
+
+}
+footer article{
+	float:left;
+	width:320px;
+
+}
+footer article h3{
+	font-family: 'Raleway',Helvetica,Arial;
+	margin-bottom: 20px;
+	color:#f89616;
+	font-size:16px;
+	font-weight:bold;
+		
+}
+footer article a{
+	text-decoration:none;
+	color:white;
+	display:block;
+	text-align:left;
+	height:30px;
+	line-height:30px;
+	padding-left:100px;
+	font-family: 'Raleway',Helvetica,Arial;
+}
+.links{
+	overflow:hidden;
+	margin:auto;
+	padding-top:30px;
+	width:960px;
+
+}
+.links p{
+	padding-top:30px;
+	clear:both;
+	text-align:left;
+	padding-left:100px;
+	color:#f89616;
+	font-family: 'Raleway',Helvetica,Arial;
+	height:30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
